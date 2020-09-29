@@ -39,7 +39,7 @@ function VerticalNavbar (props) {
             marginLeft: "30px",
         },
         navItem:{
-            color: "#afafaf",
+            color: "#ffffff",
             paddingLeft:"30px",
             textDecoration:"none",
             

@@ -8,6 +8,9 @@ const styles = ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection:"column",
+        height: "100%",
+        minHeight: "100vh",
+        width: "100%",
     },
     welcomeTextBox:{
         fontSize: "6rem",
@@ -15,7 +18,6 @@ const styles = ({
         textAlign: "center",
     }
 })
-
 
 function WelcomeSection() {
     return(
