@@ -1,4 +1,5 @@
 import React from "react"
+import Glitchify from 'react-glitchify';
 
 const styles = ({
 
@@ -23,7 +24,7 @@ function WelcomeSection() {
     return(
         <section style={styles.welcomeSection}>
             <div style={styles.welcomeTextBox}>
-                <span>Hi </span>
+                <Glitchify fontSize={50} color={"#ffffff"} background={"#0e0d0d"} steps={10}>Hi</Glitchify>
             </div>
         </section>
             
