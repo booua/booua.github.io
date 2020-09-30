@@ -12,9 +12,6 @@ const styles = ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection:"column",
-        backgroundImage: "url(./bg.svg)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize:"cover",
     },
 
 })

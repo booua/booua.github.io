@@ -1,30 +1,28 @@
 import React from "react"
 
 const styles = ({
-
-    welcomeSection:{
+    resumeSection: {
+        height: "100%",
+        minHeight: "100vh",
+        width: "100%",
         display: "flex",
         flex: "1 0 auto",
         justifyContent: "center",
         alignItems: "center",
         flexDirection:"column",
+        backgroundImage: "url(./bg.svg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize:"cover",
     },
-    welcomeTextBox:{
-        fontSize: "6rem",
-        color: "white",
-        textAlign: "center"
-    }
-
 })
 
 function ResumeSection() {
     return(
-        <section style={styles.welcomeSection}>
-            <div style={styles.welcomeTextBox}>
+        <section style={styles.resumeSection}>
+            <div>
                 RESUME
             </div>
-        </section>
-            
+        </section>    
     )
 }
 

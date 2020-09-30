@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import VerticalNavbar from "../../components/VerticalNavbar";
 import Footer from "../../components/Footer";
 import WelcomeSection from "../../components/WelcomeSection";
@@ -8,6 +8,7 @@ import Background from '../../components/Background/Background';
 
 const styles = {
   contentSection: {
+    fontFamily: "Montserrat, Work Sans, sans-serif",
     position:"relative",
     zIndex:"100",
     display: "flex",
@@ -29,9 +30,9 @@ function WelcomePage(props) {
       <section style={styles.contentSection}>
         <VerticalNavbar />
         <WelcomeSection />
-        {/* <ResumeSection/> */}
         <RecentProjectsSection/>
-        {/* <Footer/> */}
+        <ResumeSection/>
+        <Footer/>
       </section>
       <Background/>
     </div>

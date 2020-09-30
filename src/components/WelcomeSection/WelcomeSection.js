@@ -24,7 +24,16 @@ function WelcomeSection() {
     return(
         <section style={styles.welcomeSection}>
             <div style={styles.welcomeTextBox}>
-                <Glitchify fontSize={50} color={"#ffffff"} background={"#0e0d0d"} steps={10}>Hi</Glitchify>
+                <div>
+                    <Glitchify 
+                        fontSize={50} 
+                        color={"#ffffff"} 
+                        background={"#0e0d0d"} 
+                        steps={10}>
+                        Hi
+                    </Glitchify>
+                </div>
+
             </div>
         </section>
             
