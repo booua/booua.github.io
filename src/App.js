@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Switch, useLocation } from "react-router-dom";
 import ClassicLayoutRoute from "./layouts/ClassicLayout/ClassicLayoutRoute"
 import EmptyLayoutRoute from "./layouts/EmptyLayout/EmptyLayoutRoute";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -10,10 +10,12 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
+  // const location = useLocation();
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
-      <BrowserRouter basename={process.env.REACT_APP_FRONTEND}>
-        <Switch>
+    
+      <BrowserRouter>
+      <AnimatePresence>
+        <Switch >
           <ClassicLayoutRoute exact path="/" component={WelcomePage} />
           <ClassicLayoutRoute
             exact
@@ -33,8 +35,9 @@ function App() {
           <EmptyLayoutRoute exact path="/404" component={NotFoundPage} />
           <Redirect to="/404" />
         </Switch>
+        </AnimatePresence>
       </BrowserRouter>
-    </AnimatePresence>
+    
   );
 }
 

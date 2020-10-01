@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const AnimatedSection = (props) => {
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: 1,
   });
 
   return (

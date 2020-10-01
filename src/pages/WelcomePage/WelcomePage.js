@@ -8,7 +8,7 @@ import Background from '../../components/Background/Background';
 
 const styles = {
   contentSection: {
-    fontFamily: "Montserrat, Work Sans, sans-serif",
+    fontFamily: "Montserrat",
     position:"relative",
     zIndex:"100",
     display: "flex",

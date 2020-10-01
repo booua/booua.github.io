@@ -1,11 +1,13 @@
 import React from "react"
+import { Card } from "../Card/Card"
+import { Link } from "react-router-dom"
 
 function Project(props) {
-    const { title } = props
+    const { title, id } = props
     return(
-        <div>
-            PROJECT {title}
-        </div>    
+        <Link to={`/projects/${id}`}>
+            <Card title={title}/>
+        </Link>
     )
 }
 
