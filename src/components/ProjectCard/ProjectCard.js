@@ -2,14 +2,16 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
 import { interpolate } from "@popmotion/popcorn";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   border-radius: 8px;
   transform-style: preserve-3d;
   transform: perspective(921px);
-  width: 300px;
-  height: 400px;
-  margin: 2rem;
+  display: flex;
+  position: relative;
+  padding: 25px;
+  max-width: 100%;
 `;
 
 const Content = styled(motion.div)`
@@ -53,7 +55,7 @@ const Image = styled.div`
   bottom: 0;
   background-size: cover;
   border-radius: 1rem;
-  background-image: url(https://images.unsplash.com/photo-1571178109673-2686d60d6cba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
+  background-image: url(${props => props.image});
 `;
 
 const Gradient = styled(motion.div)`
@@ -65,23 +67,28 @@ const Gradient = styled(motion.div)`
   transition: all 0.5s ease;
 `;
 
-export function Card({ title, height = 400, width = 300 }) {
+export function ProjectCard({
+  title,
+  height = 400,
+  width = 300,
+  index,
+  size,
+  irregularGrid,
+  id,
+  image,
+}) {
   const ref = useRef();
   const [hover, setHover] = useState(false);
   const [tapped, setTapped] = useState(false);
 
-  // middle point in 2d space [150, 250]
   const centerPoint = [width / 2, height / 2];
   const xy = useMotionValue(centerPoint);
 
-  // how much should we rotate?
-  const tx = 0.05;
+  const tx = 0.03;
 
-  // get rotateY
   const transformX = interpolate([0, width], [width * tx, width * tx * -1]);
   const rotateY = useTransform(xy, ([x]) => transformX(x));
 
-  // get rotateX
   const transformY = interpolate(
     [0, height],
     [height * tx * -1, height * tx * 1]
@@ -90,26 +97,20 @@ export function Card({ title, height = 400, width = 300 }) {
 
   const config = {
     stiffness: 150,
-    damping: 20
+    damping: 20,
   };
 
-  // get our spring values
   const springX = useSpring(rotateX, config);
   const springY = useSpring(rotateY, config);
 
-  // this is a bit cumbersome...
   const gradientOpacity = useTransform(xy, ([, y]) => {
     return interpolate([0, height], [0, 0.3])(y);
   });
 
   const gradientOpacitySpring = useSpring(gradientOpacity, config);
 
-  // how can we animate the degree using a spring too?
-  const gradient = useTransform(gradientOpacitySpring, opacity => {
-    // ideally we could also animate our degree value too...
+  const gradient = useTransform(gradientOpacitySpring, (opacity) => {
     let [x, y] = xy.get();
-    // whyy is this necessary? otherwise our center point renders the gradient
-    // at -70? I'm too tired to do the math
     if (y === centerPoint[1]) {
       y = centerPoint[1] + 1;
     }
@@ -135,54 +136,77 @@ export function Card({ title, height = 400, width = 300 }) {
   }
 
   useEffect(() => {
-    // if not hovering, reset to
-    // our centerpoint.
     if (!hover) {
       xy.set(centerPoint);
     }
   }, [hover, xy, centerPoint]);
 
+  function getValidIndicesArray(size) {
+    let validIndicesArray = [];
+    for (let i = 0; i <= size; i++) {
+      validIndicesArray.push(4 * i);
+      validIndicesArray.push(4 * i + 3);
+    }
+    return validIndicesArray;
+  }
+
+  function getContainerWidth() {
+    return !irregularGrid
+      ? "100%"
+      : getValidIndicesArray(size).find((id) => id === index + 2)
+      ? "35%"
+      : "50%";
+  }
+
   return (
-    <Container ref={ref} style={{ height: `${height}px`, width: `${width}px` }}>
+    <Container
+      ref={ref}
+      style={{
+        height: `${height}px`,
+        flex: `0 0 ${getContainerWidth()}`,
+        maxWidth: `${getContainerWidth()}`,
+      }}
+    >
       <Content
         style={{
           scale: 1,
           rotateX: springX,
-          rotateY: springY
+          rotateY: springY,
         }}
         whileHover={{
-          scale: 1.03
+          scale: 1.03,
         }}
         whileTap={{
-          scale: 0.97
+          scale: 0.97,
         }}
-        onTapCancel={e => {
+        onTapCancel={(e) => {
           setTapped(false);
           onMouseOver(e);
         }}
         onTapStart={() => {
           setTapped(true);
         }}
-        onTap={e => {
+        onTap={(e) => {
           setTapped(false);
         }}
         onHoverStart={hoverStart}
         onHoverEnd={hoverEnd}
         onMouseMove={onMouseOver}
       >
-        
-        <Shadow hover={hover} />
-        {title}
-        <RelativeContainer>
-        
-          <Image />
+        <Link to={`/projects/${id}`}>
+          <Shadow hover={hover} />
+          <RelativeContainer>
+          <h1>{title}</h1>
+            <Image image={image}/>
+          </RelativeContainer>
           
-        </RelativeContainer>
-        <Gradient
-          style={{
-            background: gradient
-          }}
-        />
+          <Gradient
+            style={{
+              background: gradient,
+            }}
+          />
+          
+        </Link>
       </Content>
     </Container>
   );

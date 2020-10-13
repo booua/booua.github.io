@@ -1,6 +1,7 @@
 import React from "react"
 import Project from "../Project/Project"
-import { Row, Col } from "../Grid/Grid"
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import { ProjectsList } from "../../content/ProjectsList"
 
 const styles = ({
     recentProjecsContainer:{
@@ -31,25 +32,26 @@ const styles = ({
 })
 
 function RecentProjectsSection() {
-    const projects = ["project1", "project2", "project3"]
     return(
         <section style={styles.recentProjecsContainer}>
             <span style={styles.recentProjectsTitle}>Recent projects</span>
             <div style={styles.projectSection}>
-                <Row collapse={'md'}>
-                    {
-                        projects && projects.map(project => (
-                                <Col size={2}>
-                                        <Project key={project} id={project} title={project}/>
-                                </Col>
+                <Grid>
+                    <Row center="xs">
+                        {
+                            ProjectsList && Object.values(ProjectsList).map((project,index) => { 
+                            if (index > 2) return "";
+                                    return (
+                                        <Col xs={12} sm ={6} md={4} key={"col-"+project.id}>
+                                            <Project key={project.id} image={project.image} id={project.id} title={project.title}/>
+                                        </Col>
+                                    )}
                             )
-                        )
-                    }
+                        }
                 </Row>
+                </Grid>
             </div>
         </section>
-
-            
     )
 }
 

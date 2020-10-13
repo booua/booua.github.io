@@ -5,6 +5,7 @@ function VerticalNavbar (props) {
 
     const styles = ({
         navBar:{
+            fontFamily: "Montserrat",
             color: "#afafaf",
             padding:"30px 10px 10px 0px",
             display: "flex",
@@ -25,6 +26,9 @@ function VerticalNavbar (props) {
             justifyContent: "right",
             alignItems: "right",
             marginRight: "30px",
+            color: "#ffffff",
+            textDecoration:"none",
+            
         },
         navContainer:{
             display: "flex",
@@ -54,7 +58,7 @@ function VerticalNavbar (props) {
                 <Link to="/articles" className="item" style={styles.navItem}>Articles</Link>
                 <Link to="/projects" className="item" style={styles.navItem}>Projects</Link>
             </div>
-            <span style={styles.logo}>logo</span>
+            <Link to="/" className="item" style={styles.logo}>logo</Link>
         </div>
     )
 

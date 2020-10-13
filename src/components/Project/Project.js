@@ -1,13 +1,10 @@
 import React from "react"
-import { Card } from "../Card/Card"
-import { Link } from "react-router-dom"
+import { ProjectCard } from "../ProjectCard/ProjectCard"
 
 function Project(props) {
-    const { title, id } = props
+    const { title, index, size, irregularGrid, id, image} = props
     return(
-        <Link to={`/projects/${id}`}>
-            <Card title={title}/>
-        </Link>
+            <ProjectCard title={title} index={index} image={image} size={size} id={id} irregularGrid={irregularGrid}/>
     )
 }
 
