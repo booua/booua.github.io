@@ -12,12 +12,13 @@ function VerticalNavbar (props) {
             flex: "1 0 auto",
             backgroundColor: "transparent",
             width: "100vh",
-            height: "4rem",
+            height: "2rem",
             transformOrigin: "top left",
             position: "fixed",
             left: "0",
             top: "100%",
-            transform: "rotate(-90deg)"
+            transform: "rotate(-90deg)",
+            zIndex: "9999"
         },
         logo:{
             display: "flex",
