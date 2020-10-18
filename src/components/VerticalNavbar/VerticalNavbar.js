@@ -39,6 +39,8 @@ function VerticalNavbar(props) {
       marginRight: "30px",
       color: "#ffffff",
       textDecoration: "none",
+      outline: "none",
+      borderRadius: "30px",
     },
     navContainer: {
       display: "flex",
@@ -99,10 +101,7 @@ function VerticalNavbar(props) {
           />
         </motion.span>
       </Link>
-      <ContactPane
-        isToggled={isToggled}
-        hide={toggle}
-      />
+      <ContactPane isToggled={isToggled} hide={toggle} />
     </div>
   );
 }
