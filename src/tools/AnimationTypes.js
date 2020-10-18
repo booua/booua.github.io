@@ -46,3 +46,22 @@ export const headlineAnimation = {
       },
     },
   }
+
+  export const hoverAnimation = {
+    scale: 1.1,
+    letterSpacing: "2px",
+  }
+  export const logoHoverAnimation = {
+    scale: 1.4,
+  }
+  export const clickAnimation = {
+    scale: 0.9,
+  }
+  export const revealAnimation = {
+    y: 0,
+    opacity: 1
+  }
+  export const exitAnimation = {
+    y: 240,
+    opacity: 0
+  }
