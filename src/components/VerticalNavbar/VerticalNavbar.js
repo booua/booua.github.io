@@ -40,7 +40,6 @@ function VerticalNavbar(props) {
       color: "#ffffff",
       textDecoration: "none",
       outline: "none",
-      borderRadius: "30px",
     },
     navContainer: {
       display: "flex",
@@ -94,7 +93,7 @@ function VerticalNavbar(props) {
             src="/orb.gif"
             alt="orb"
             style={{
-              width: "4rem",
+              width: "3rem",
               backgroundColor: "#0e0d0d",
               transform: "rotate(90deg)",
             }}

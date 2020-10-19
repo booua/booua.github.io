@@ -9,6 +9,7 @@ import ArticlesPage from "./pages/ArticlesPage/ArticlesPage";
 import ProjectShowcasePage from "./pages/ProjectShowcasePage/ProjectShowcasePage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import { AnimatePresence } from "framer-motion";
+import { withLoadingScreen } from "./components/LoadingScreen/LoadingScreen"
 
 function App() {
   return (
@@ -40,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default withLoadingScreen(App);
