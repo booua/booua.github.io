@@ -18,6 +18,8 @@
     "react-particles-js": "^3.3.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "smooth-scrollbar": "^8.5.3",
+    "smooth-scrollbar-react": "^1.0.0",
     "styled-components": "^5.2.0",
     "vanta": "^0.5.19",
     "vertical-timeline-component-react": "^2.0.1"

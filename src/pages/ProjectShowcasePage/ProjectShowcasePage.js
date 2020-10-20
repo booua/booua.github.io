@@ -1,7 +1,6 @@
-import React from 'react'
-import VerticalNavbar from "../../components/VerticalNavbar";
+import React from "react";
 import { useParams } from "react-router-dom";
-import ContentSection from '../../components/ContentSection/ContentSection';
+import ContentSection from "../../components/ContentSection/ContentSection";
 
 const styles = {
   contentSection: {
@@ -13,23 +12,21 @@ const styles = {
     minHeight: "100vh",
     width: "100%",
     justifyContent: "center",
-    color: "white"
+    color: "white",
   },
   root: {
-    backgroundColor:"#0e0d0d"
+    backgroundColor: "#0e0d0d",
   },
 };
 
 function ProjectShowcasePage(props) {
-    let { projectId } = useParams();
+  let { projectId } = useParams();
   return (
     <div style={styles.root}>
-        <VerticalNavbar />
-        <ContentSection id={projectId}>
-            <h1>{projectId}</h1>
-        </ContentSection>
+      <ContentSection id={projectId}>
+        <h1>{projectId}</h1>
+      </ContentSection>
     </div>
-     
   );
 }
 

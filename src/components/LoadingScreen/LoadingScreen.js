@@ -30,7 +30,7 @@ export const LoadingScreen = () => {
       ></motion.div>
       <motion.div
         animate={{ y: "-100%" }}
-        transition={{ duration: 1, ease: "easeOut", delay: 1}}
+        transition={{ duration: 1, ease: "easeOut", delay: 1 }}
         style={{ backgroundColor: "#fafafa", width: "100vw", height: "50vh" }}
       ></motion.div>
       <motion.div
@@ -44,10 +44,9 @@ export const LoadingScreen = () => {
 
 export const withLoadingScreen = (WrappedComponent) => {
   return class extends Component {
-
     state = {
-      loading: true
-    }
+      loading: true,
+    };
 
     async componentDidMount() {
       try {
@@ -55,7 +54,7 @@ export const withLoadingScreen = (WrappedComponent) => {
           this.setState({
             loading: false,
           });
-        },2000);
+        }, 2000);
       } catch (err) {
         console.log(err);
         this.setState({

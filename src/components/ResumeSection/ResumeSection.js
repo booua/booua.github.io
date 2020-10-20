@@ -57,7 +57,7 @@ function ResumeSection() {
                 </BodyContent>
               </Container>
               <Container>
-                <YearContent startDate="2017/01" endDate="2018/12"  />
+                <YearContent startDate="2017/01" endDate="2018/12" />
                 <BodyContent>
                   <Section title="BeHappy.io">
                     <Description text="iOS Developer" />

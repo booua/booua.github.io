@@ -1,11 +1,10 @@
 import React from "react";
-import VerticalNavbar from "../../components/VerticalNavbar";
 import Footer from "../../components/Footer";
 import WelcomeSection from "../../components/WelcomeSection";
 import RecentProjectsSection from "../../components/RecentProjectsSection/RecentProjectsSection";
 import ResumeSection from "../../components/ResumeSection/ResumeSection";
 import Background from "../../components/Background/Background";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 const styles = {
   contentSection: {
     fontFamily: "Montserrat",
@@ -26,17 +25,19 @@ const styles = {
 
 function WelcomePage(props) {
   return (
-    
-      <motion.div style={styles.root} initial={{opacity: 0}} animate={{opacity: 1}}>
-        <section style={styles.contentSection}>
-          <VerticalNavbar />
-          <WelcomeSection />
-          <RecentProjectsSection />
-          <ResumeSection />
-          <Footer />
-        </section>
+    <motion.div
+      style={styles.root}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <section style={styles.contentSection}>
+        <WelcomeSection />
         <Background />
-      </motion.div>
+        <RecentProjectsSection />
+        <ResumeSection />
+        <Footer />
+      </section>
+    </motion.div>
   );
 }
 

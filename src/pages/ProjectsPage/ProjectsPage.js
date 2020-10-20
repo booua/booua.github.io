@@ -1,7 +1,6 @@
 import React from "react";
 import { ProjectsList } from "../../content/ProjectsList";
 import Project from "../../components/Project/Project";
-import VerticalNavbar from "../../components/VerticalNavbar";
 import ContentSection from "../../components/ContentSection/ContentSection";
 import { styles } from "../../tools/DefaultStyles";
 import styled from "styled-components";
@@ -18,23 +17,22 @@ const Container = styled.div`
 function ProjectsPage(props) {
   return (
     <div style={styles.root}>
-      <VerticalNavbar />
       <ContentSection>
         <h1>PROJECTS</h1>
         <Container>
-            {ProjectsList &&
-              Object.values(ProjectsList).map((project, index) => (
-                  <Project
-                    size={Object.keys(ProjectsList).length}
-                    index={index}
-                    key={project.id}
-                    id={project.id}
-                    title={project.title}
-                    image={project.image}
-                    irregularGrid
-                  />
-              ))}
-              </Container>
+          {ProjectsList &&
+            Object.values(ProjectsList).map((project, index) => (
+              <Project
+                size={Object.keys(ProjectsList).length}
+                index={index}
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                image={project.image}
+                irregularGrid
+              />
+            ))}
+        </Container>
       </ContentSection>
     </div>
   );
