@@ -6,6 +6,7 @@ import {
   hoverAnimation,
   clickAnimation,
   logoHoverAnimation,
+  menuItemEnterAnimation,
 } from "../../tools/AnimationTypes";
 import ContactPane from "../ContactPane/ContactPane";
 
@@ -67,28 +68,60 @@ function VerticalNavbar(props) {
         whileHover={hoverAnimation}
         style={styles.contactIcon}
         onClick={toggle}
+        variants={menuItemEnterAnimation}
+        custom={5}
+        animate="visible"
+        initial="hidden"
       >
         contact
       </motion.span>
       <div style={styles.navContainer}>
-        <motion.span whileTap={clickAnimation} whileHover={hoverAnimation}>
+        <motion.span
+          whileTap={clickAnimation}
+          whileHover={hoverAnimation}
+          variants={menuItemEnterAnimation}
+          custom={4}
+          animate="visible"
+          initial="hidden"
+        >
           <Link to="/about" className="item" style={styles.navItem}>
             About
           </Link>
         </motion.span>
-        <motion.span whileTap={clickAnimation} whileHover={hoverAnimation}>
+        <motion.span
+          whileTap={clickAnimation}
+          whileHover={hoverAnimation}
+          variants={menuItemEnterAnimation}
+          custom={3}
+          animate="visible"
+          initial="hidden"
+        >
           <Link to="/articles" className="item" style={styles.navItem}>
             Articles
           </Link>
         </motion.span>
-        <motion.span whileTap={clickAnimation} whileHover={hoverAnimation}>
+        <motion.span
+          whileTap={clickAnimation}
+          whileHover={hoverAnimation}
+          variants={menuItemEnterAnimation}
+          custom={2}
+          animate="visible"
+          initial="hidden"
+        >
           <Link to="/projects" className="item" style={styles.navItem}>
             Projects
           </Link>
         </motion.span>
       </div>
       <Link to="/" className="item" style={styles.logo}>
-        <motion.span whileTap={clickAnimation} whileHover={logoHoverAnimation}>
+        <motion.span
+          whileTap={clickAnimation}
+          whileHover={logoHoverAnimation}
+          variants={menuItemEnterAnimation}
+          custom={1}
+          animate="visible"
+          initial="hidden"
+        >
           <img
             src="/orb.gif"
             alt="orb"
