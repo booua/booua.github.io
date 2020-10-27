@@ -44,7 +44,7 @@ const styles = {
     titleColor: "#ffffff",
     subtitleColor: "#afafaf",
     textColor: "#ffffff",
-  },
+  }
 };
 
 function ResumeSection() {
@@ -69,9 +69,9 @@ function ResumeSection() {
           Resume
         </motion.span>
         <Grid style={styles.resumeContent}>
-          <Row center="xs">
-            <motion.span variants={resumeItemEnterAnimation} custom={1}>
-              <Col xs={12} sm={6} md={4}>
+          <Row>
+            <Col xs={12} sm={12} md={4}>
+              <motion.span variants={resumeItemEnterAnimation} custom={1}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
                     <YearContent startDate="2020/10" currentYear />
@@ -119,10 +119,11 @@ function ResumeSection() {
                     </BodyContent>
                   </Container>
                 </Timeline>
-              </Col>
-            </motion.span>
-            <motion.span variants={resumeItemEnterAnimation} custom={2}>
-              <Col xs={12} sm={6} md={4}>
+              </motion.span>
+            </Col>
+
+            <Col xs={12} sm={12} md={4}>
+              <motion.span variants={resumeItemEnterAnimation} custom={2}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
                     <YearContent startDate="2020/07/01" currentYear />
@@ -153,10 +154,11 @@ function ResumeSection() {
                     </BodyContent>
                   </Container>
                 </Timeline>
-              </Col>
-            </motion.span>
-            <motion.span variants={resumeItemEnterAnimation} custom={3}>
-              <Col xs={12} sm={6} md={4}>
+              </motion.span>
+            </Col>
+
+            <Col xs={12} sm={12} md={4}>
+              <motion.span variants={resumeItemEnterAnimation} custom={3}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
                     <YearContent startDate="2016/10" endDate="2020/05" />
@@ -176,8 +178,8 @@ function ResumeSection() {
                     </BodyContent>
                   </Container>
                 </Timeline>
-              </Col>
-            </motion.span>
+              </motion.span>
+            </Col>
           </Row>
         </Grid>
       </AnimatedSection>
