@@ -4,12 +4,14 @@ import { useInView } from "react-intersection-observer";
 
 const AnimatedSection = (props) => {
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: props.threshold || 1,
   });
 
   return (
     <motion.section
+      style={props.style}
       ref={ref}
+      key={props.id}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >

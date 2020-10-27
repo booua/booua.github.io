@@ -82,3 +82,39 @@ export const menuItemEnterAnimation = {
     y: "-2rem",
   },
 };
+
+export const projectItemEnterAnimation = {
+  visible: (i) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      delay: i * 0.2,
+    },
+  }),
+  hidden: (i) => ({
+    opacity: 0,
+    y: 100,
+    transition: {
+      duration: 0.2,
+      delay: i * 0.2,
+    },
+  }),
+};
+
+export const resumeItemEnterAnimation = {
+  visible: (i) => ({
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      delay: i * 0.2,
+    },
+  }),
+  hidden: (i) => ({
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+      delay: i * 0.2,
+    },
+  }),
+};
