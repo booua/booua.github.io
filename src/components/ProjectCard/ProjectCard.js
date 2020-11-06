@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
 import { interpolate } from "@popmotion/popcorn";
 import { Link } from "react-router-dom";
+import {
+  handleMouseDown,
+  handleMouseEnter,
+  handleMouseLeave,
+  handleMouseUp,
+} from "../Cursor/Cursor";
 
 const Container = styled.div`
   border-radius: 8px;
@@ -55,7 +61,7 @@ const Image = styled.div`
   bottom: 0;
   background-size: cover;
   border-radius: 1rem;
-  background-image: url(${props => props.image});
+  background-image: url(${(props) => props.image});
 `;
 
 const Gradient = styled(motion.div)`
@@ -193,19 +199,25 @@ export function ProjectCard({
         onHoverEnd={hoverEnd}
         onMouseMove={onMouseOver}
       >
-        <Link to={`/projects/${id}`}>
+        <Link
+          style={{ cursor: "none" }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseDown={handleMouseDown}
+          to={`/projects/${id}`}
+        >
           <Shadow hover={hover} />
           <RelativeContainer>
-          <h1>{title}</h1>
-            <Image image={image}/>
+            <h1>{title}</h1>
+            <Image image={image} />
           </RelativeContainer>
-          
+
           <Gradient
             style={{
               background: gradient,
             }}
           />
-          
         </Link>
       </Content>
     </Container>

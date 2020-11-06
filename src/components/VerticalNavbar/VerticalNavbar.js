@@ -9,6 +9,12 @@ import {
   menuItemEnterAnimation,
 } from "../../tools/AnimationTypes";
 import ContactPane from "../ContactPane/ContactPane";
+import {
+  handleMouseDown,
+  handleMouseEnter,
+  handleMouseLeave,
+  handleMouseUp,
+} from "../Cursor/Cursor";
 
 function VerticalNavbar(props) {
   const [isToggled, toggle] = useToggle(false);
@@ -41,6 +47,7 @@ function VerticalNavbar(props) {
       color: "#ffffff",
       textDecoration: "none",
       outline: "none",
+      cursor: "none",
     },
     navContainer: {
       display: "flex",
@@ -58,12 +65,17 @@ function VerticalNavbar(props) {
       color: "#ffffff",
       paddingLeft: "30px",
       textDecoration: "none",
+      cursor: "none",
     },
   };
 
   return (
     <div className="navBar" style={styles.navBar}>
       <motion.span
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseDown={handleMouseDown}
         whileTap={clickAnimation}
         whileHover={hoverAnimation}
         style={styles.contactIcon}
@@ -84,7 +96,15 @@ function VerticalNavbar(props) {
           animate="visible"
           initial="hidden"
         >
-          <Link to="/about" className="item" style={styles.navItem}>
+          <Link
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseDown={handleMouseDown}
+            to="/about"
+            className="item"
+            style={styles.navItem}
+          >
             About
           </Link>
         </motion.span>
@@ -96,7 +116,15 @@ function VerticalNavbar(props) {
           animate="visible"
           initial="hidden"
         >
-          <Link to="/articles" className="item" style={styles.navItem}>
+          <Link
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseDown={handleMouseDown}
+            to="/articles"
+            className="item"
+            style={styles.navItem}
+          >
             Articles
           </Link>
         </motion.span>
@@ -108,12 +136,28 @@ function VerticalNavbar(props) {
           animate="visible"
           initial="hidden"
         >
-          <Link to="/projects" className="item" style={styles.navItem}>
+          <Link
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseDown={handleMouseDown}
+            to="/projects"
+            className="item"
+            style={styles.navItem}
+          >
             Projects
           </Link>
         </motion.span>
       </div>
-      <Link to="/" className="item" style={styles.logo}>
+      <Link
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseDown={handleMouseDown}
+        to="/"
+        className="item"
+        style={styles.logo}
+      >
         <motion.span
           whileTap={clickAnimation}
           whileHover={logoHoverAnimation}

@@ -10,27 +10,39 @@ import ProjectShowcasePage from "./pages/ProjectShowcasePage/ProjectShowcasePage
 import AboutPage from "./pages/AboutPage/AboutPage";
 import { AnimatePresence } from "framer-motion";
 import { withLoadingScreen } from "./components/LoadingScreen/LoadingScreen";
+import Cursor, { handleCursorMove } from "./components/Cursor/Cursor";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <AnimatePresence exitBeforeEnter>
-        <Switch>
-          <ClassicLayoutRoute exact path="/" component={WelcomePage} />
-          <ClassicLayoutRoute exact path="/projects" component={ProjectsPage} />
-          <ClassicLayoutRoute exact path="/articles" component={ArticlesPage} />
-          <ClassicLayoutRoute exact path="/about" component={AboutPage} />
-          <ClassicLayoutRoute
-            exact
-            path="/projects/:projectId"
-            component={ProjectShowcasePage}
-          />
-          <EmptyLayoutRoute exact path="/404" component={NotFoundPage} />
-          <Redirect to="/404" />
-        </Switch>
-      </AnimatePresence>
-    </BrowserRouter>
+    <div onMouseMove={(e) => handleCursorMove(e)} style={{cursor: "none"}}>
+      <BrowserRouter>
+        <AnimatePresence exitBeforeEnter>
+          <Switch>
+            <ClassicLayoutRoute exact path="/" component={WelcomePage} />
+            <ClassicLayoutRoute
+              exact
+              path="/projects"
+              component={ProjectsPage}
+            />
+            <ClassicLayoutRoute
+              exact
+              path="/articles"
+              component={ArticlesPage}
+            />
+            <ClassicLayoutRoute exact path="/about" component={AboutPage} />
+            <ClassicLayoutRoute
+              exact
+              path="/projects/:projectId"
+              component={ProjectShowcasePage}
+            />
+            <EmptyLayoutRoute exact path="/404" component={NotFoundPage} />
+            <Redirect to="/404" />
+          </Switch>
+        </AnimatePresence>
+        <Cursor />
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default withLoadingScreen(App);
