@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/Footer";
 import WelcomeSection from "../../components/WelcomeSection";
 import RecentProjectsSection from "../../components/RecentProjectsSection/RecentProjectsSection";
 import ResumeSection from "../../components/ResumeSection/ResumeSection";
@@ -23,7 +22,7 @@ const styles = {
   },
 };
 
-function WelcomePage(props) {
+function WelcomePage() {
   return (
     <motion.div
       style={styles.root}
@@ -35,7 +34,6 @@ function WelcomePage(props) {
         <Background />
         <RecentProjectsSection />
         <ResumeSection />
-        <Footer />
       </section>
     </motion.div>
   );

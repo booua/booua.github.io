@@ -2,9 +2,9 @@ import React from "react"
 import { ProjectCard } from "../ProjectCard/ProjectCard"
 
 function Project(props) {
-    const { title, index, size, irregularGrid, id, image} = props
+    const { title, index, size, irregularGrid, id, image, link} = props
     return(
-            <ProjectCard title={title} index={index} image={image} size={size} id={id} irregularGrid={irregularGrid}/>
+            <ProjectCard link={link} title={title} index={index} image={image} size={size} id={id} irregularGrid={irregularGrid}/>
     )
 }
 

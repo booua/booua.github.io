@@ -7,6 +7,9 @@ import {
 } from "../../tools/AnimationTypes";
 import AnimatedSection from "../AnimatedSection/AnimatedSection";
 
+let isChrome = navigator.userAgent.indexOf("Chrome") > -1;
+let isSafari = navigator.userAgent.indexOf("Safari") > -1;
+
 const styles = {
   welcomeSection: {
     fontFamily: "Montserrat",
@@ -29,6 +32,8 @@ const styles = {
   },
   wrapper: {
     display: "flex",
+    clear: "both",
+    padding: "10px",
     flex: "1 0 auto",
     flexDirection: "row",
     marginTop: "-5vh",
@@ -38,6 +43,7 @@ const styles = {
     flex: "1 0 auto",
   },
   introductionTextBox: {
+    paddingTop: isSafari || isChrome ? "0.7vw" : "0",
     textAlign: "center",
     display: "flex",
     flex: "1 0 auto",

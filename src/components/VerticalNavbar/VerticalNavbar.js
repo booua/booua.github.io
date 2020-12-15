@@ -24,8 +24,8 @@ function VerticalNavbar(props) {
       fontFamily: "Montserrat",
       color: "#afafaf",
       padding: "30px 10px 10px 0px",
-      display: "flex",
-      flex: "1 0 auto",
+      display: "grid",
+      gridTemplateColumns: "auto 1fr auto",
       backgroundColor: "transparent",
       width: "100vh",
       height: "2rem",
@@ -36,36 +36,39 @@ function VerticalNavbar(props) {
       transform: "rotate(-90deg)",
       zIndex: "9999",
       outline: "none",
+      cursor: "none",
     },
     logo: {
-      display: "flex",
-      flexDirection: "row",
-      flex: "1 0 auto",
-      justifyContent: "right",
       alignItems: "right",
       marginRight: "30px",
       color: "#ffffff",
       textDecoration: "none",
       outline: "none",
       cursor: "none",
+      width: "100%",
+      height: "100%",
+      display: "block",
     },
     navContainer: {
       display: "flex",
-      flexDirection: "row",
       justifyContent: "center",
-      flex: "5 0 auto",
+      cursor: "none",
     },
     contactIcon: {
-      display: "flex",
-      flexDirection: "row",
-      flex: "1 0 auto",
       marginLeft: "30px",
+      width: "100%",
+      height: "100%",
+      display: "block",
+      cursor: "none",
     },
     navItem: {
       color: "#ffffff",
       paddingLeft: "30px",
       textDecoration: "none",
       cursor: "none",
+      width: "100%",
+      height: "100%",
+      display: "block",
     },
   };
 
@@ -149,25 +152,26 @@ function VerticalNavbar(props) {
           </Link>
         </motion.span>
       </div>
-      <Link
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseDown={handleMouseDown}
-        to="/"
-        className="item"
-        style={styles.logo}
+
+      <motion.span
+        whileTap={clickAnimation}
+        whileHover={logoHoverAnimation}
+        variants={menuItemEnterAnimation}
+        custom={1}
+        animate="visible"
+        initial="hidden"
       >
-        <motion.span
-          whileTap={clickAnimation}
-          whileHover={logoHoverAnimation}
-          variants={menuItemEnterAnimation}
-          custom={1}
-          animate="visible"
-          initial="hidden"
+        <Link
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseDown={handleMouseDown}
+          to="/"
+          className="item"
+          style={styles.logo}
         >
           <img
-            src="/orb.gif"
+            src="/img/orb.gif"
             alt="orb"
             style={{
               width: "3rem",
@@ -175,8 +179,9 @@ function VerticalNavbar(props) {
               transform: "rotate(90deg)",
             }}
           />
-        </motion.span>
-      </Link>
+        </Link>
+      </motion.span>
+
       <ContactPane isToggled={isToggled} hide={toggle} />
     </div>
   );

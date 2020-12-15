@@ -73,6 +73,7 @@ function RecentProjectsSection() {
                           image={project.image}
                           id={project.id}
                           title={project.title}
+                          link={project.link}
                         />
                         {project.title}
                       </motion.div>

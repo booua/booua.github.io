@@ -10,6 +10,8 @@ import {
   handleMouseUp,
 } from "../Cursor/Cursor";
 
+let isSafari = navigator.userAgent.indexOf("Safari") > -1;
+
 const Container = styled.div`
   border-radius: 8px;
   transform-style: preserve-3d;
@@ -26,6 +28,8 @@ const Content = styled(motion.div)`
   height: 100%;
   border-radius: 8px;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  overflow: visible !important;
   perspective: 800px;
   backface-visibility: hidden;
 `;
@@ -38,7 +42,9 @@ const Shadow = styled.div`
   border-radius: 1rem;
   height: 90%;
   transition: all 0.2s ease-out 0s;
-  box-shadow: rgba(0, 0, 0, 06) 0px 50px 100px -30px;
+  box-shadow: ${isSafari
+    ? ""
+    : "rgba(0, 0, 0, 6) 0px 50px 100px -30px"}; //rgba(0, 0, 0, 6) 0px 50px 100px -30px;
 `;
 
 const RelativeContainer = styled.div`
@@ -57,11 +63,12 @@ const Image = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  transform: translateZ(0);
+  /* transform: translateZ(0px); */
   bottom: 0;
   background-size: cover;
   border-radius: 1rem;
   background-image: url(${(props) => props.image});
+  background-position: center;
 `;
 
 const Gradient = styled(motion.div)`
@@ -82,6 +89,7 @@ export function ProjectCard({
   irregularGrid,
   id,
   image,
+  link,
 }) {
   const ref = useRef();
   const [hover, setHover] = useState(false);
@@ -175,15 +183,16 @@ export function ProjectCard({
     >
       <Content
         style={{
-          scale: 1,
+          scale: isSafari ? 0.9 : 1,
           rotateX: springX,
           rotateY: springY,
+          translateZ: isSafari ? "100px" : "0",
         }}
         whileHover={{
-          scale: 1.03,
+          scale: isSafari ? 0.93 : 1.03,
         }}
         whileTap={{
-          scale: 0.97,
+          scale: isSafari ? 0.87 : 0.97,
         }}
         onTapCancel={(e) => {
           setTapped(false);
@@ -209,10 +218,23 @@ export function ProjectCard({
         >
           <Shadow hover={hover} />
           <RelativeContainer>
-            <h1>{title}</h1>
+            <h1
+              style={{
+                zIndex: "99999",
+                fontFamily: "Montserrat",
+                width: "100%",
+                color: "white",
+                fontSize: "1.7rem",
+                textShadow: "4px 4px 7px rgba(0, 0, 0, 1)",
+                textAlign: "center",
+                textDecoration: "none",
+                position: "absolute",
+              }}
+            >
+              {irregularGrid ? title : ""}
+            </h1>
             <Image image={image} />
           </RelativeContainer>
-
           <Gradient
             style={{
               background: gradient,

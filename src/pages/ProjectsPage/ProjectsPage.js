@@ -22,15 +22,16 @@ function ProjectsPage(props) {
         <Container>
           {ProjectsList &&
             Object.values(ProjectsList).map((project, index) => (
-              <Project
-                size={Object.keys(ProjectsList).length}
-                index={index}
-                key={project.id}
-                id={project.id}
-                title={project.title}
-                image={project.image}
-                irregularGrid
-              />
+                <Project
+                  size={Object.keys(ProjectsList).length}
+                  index={index}
+                  key={project.id}
+                  id={project.id}
+                  title={project.title}
+                  image={project.imageWide}
+                  link={project.link}
+                  irregularGrid
+                />
             ))}
         </Container>
       </ContentSection>

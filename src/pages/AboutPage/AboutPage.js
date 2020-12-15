@@ -1,14 +1,14 @@
 import React from "react";
 import ContentSection from "../../components/ContentSection/ContentSection";
-import { styles } from "../../tools/DefaultStyles";
+import { styles as defaultStyles } from "../../tools/DefaultStyles";
 
-const AboutPage = (props) => {
+const AboutPage = () => {
   return (
-    <div style={styles.root}>
+    <div style={defaultStyles.root}>
       <ContentSection id="about">
-        <h1>About me</h1>
+      <h1 style={defaultStyles.articlesPageTitle}>About me</h1>
         <img
-          src="./test.png"
+          src="./img/test.png"
           style={{
             height: "75vh",
             bottom: "-25px",

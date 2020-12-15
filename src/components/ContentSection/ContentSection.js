@@ -26,7 +26,6 @@ function ContentSection(props) {
       style={props.style === undefined ? styles.contentSection: props.style}
       animate={{ opacity: 1, scale: 0.95, transition}}
       initial={{ opacity: 0, scale: 1 }}
-      // exit={{opacity: 0, scale: 0.5, transition}}
     >
       {props.children}
     </motion.section>

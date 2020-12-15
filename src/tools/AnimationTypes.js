@@ -83,6 +83,21 @@ export const menuItemEnterAnimation = {
   },
 };
 
+export const articleItemEnterAnimation = {
+  hidden: {
+    opacity: 0,
+    x: -200,
+  },
+  visible: (i) => ({
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      delay: i * 0.1,
+    },
+  }),
+}
+
 export const projectItemEnterAnimation = {
   visible: (i) => ({
     y: 0,

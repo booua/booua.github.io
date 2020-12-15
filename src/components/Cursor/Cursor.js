@@ -2,9 +2,9 @@ import React from "react";
 
 const styles = {
   cursor: {
-    width: "3rem",
-    height: "3rem",
-    borderLeft: "2px solid white",
+    width: "1.5rem",
+    height: "1.5rem",
+    borderLeft: "1.5px solid white",
     position: "absolute",
     pointerEvents: "none",
     zIndex: "999999",
@@ -13,10 +13,10 @@ const styles = {
 
   },
   line:{
-    width: "2.7rem",
-    height: "3rem",
-    borderTop: "2px solid white",
-    transform: "translateX(-27px) translateY(7px) rotate(50deg)",
+    width: "1.35rem",
+    height: "1.5rem",
+    borderTop: "1.5px solid white",
+    transform: "translateX(-14px) translateY(3px) rotate(50deg)",
     transitionProperty: "background, border, transform",
     transition: "all 0.2 ease",
   }
@@ -33,14 +33,14 @@ export const handleMouseUp = () => {
 export const handleMouseEnter = () => {
   const cursor = document.querySelector(".cursor");
   const line = document.querySelector(".line");
-  if(cursor) cursor.style.borderLeft = "3px solid rgb(52, 204, 198)"
-  line.style.borderTop = "3px solid rgb(52, 204, 198)"
+  if(cursor) cursor.style.borderLeft = "1.5px solid rgb(52, 204, 198)"
+  line.style.borderTop = "1.5px solid rgb(52, 204, 198)"
 } 
 export const handleMouseLeave = () => {
   const cursor = document.querySelector(".cursor");
   const line = document.querySelector(".line");
-  line.style.borderTop = "3px solid white"
-  cursor.style.borderLeft = "3px solid white"
+  line.style.borderTop = "1.5px solid white"
+  cursor.style.borderLeft = "1.5px solid white"
 } 
 
 export const handleCursorMove = (e) => {

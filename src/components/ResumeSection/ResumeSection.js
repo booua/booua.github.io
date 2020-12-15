@@ -77,8 +77,8 @@ function ResumeSection() {
                     <YearContent startDate="2020/10" currentYear />
                     <BodyContent>
                       <Section title="Freelancer">
-                        <Description text="Description" />
-                        <Description text="Another description" />
+                        <Description text="" />
+                        <Description text="" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -87,7 +87,7 @@ function ResumeSection() {
                     <BodyContent>
                       <Section title="CERN">
                         <Description text="Full Stack Developer" />
-                        <Description text="Technical studentship" />
+                        <Description variant="subtitle" text="Technical studentship" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -96,7 +96,7 @@ function ResumeSection() {
                     <BodyContent>
                       <Section title="BeHappy.io">
                         <Description text="iOS Developer" />
-                        <Description text="Another description" />
+                        <Description variant="subtitle" text="App for people suffering from depression" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -104,8 +104,8 @@ function ResumeSection() {
                     <YearContent startDate="2017/06" endDate="2018/06" />
                     <BodyContent>
                       <Section title="uKOD">
-                        <Description text="Description" />
-                        <Description text="Another description" />
+                        <Description text="Operations Team Leader" />
+                        <Description variant="subtitle" text="Student research group interested in IT Security, cryptography and social engineering" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -114,7 +114,7 @@ function ResumeSection() {
                     <BodyContent>
                       <Section title="Artists Ent.">
                         <Description text="Full Stack Developer" />
-                        <Description text="Another description" />
+                        <Description text="" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -126,30 +126,20 @@ function ResumeSection() {
               <motion.span variants={resumeItemEnterAnimation} custom={2}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
-                    <YearContent startDate="2020/07/01" currentYear />
+                    <YearContent startDate="2016/07/01" endDate="2016/09/01" />
                     <BodyContent>
-                      <Section title="Title3">
-                        <Description variant="subtitle" text="Subtitle" />
-                        <Description text="Description3" />
-                        <Description text="Another description3" />
-                      </Section>
-                      <Section title="Another title3">
-                        <Description text="Description3" />
-                        <Description text="Another description3" />
+                      <Section title="Contellio">
+                        <Description text="Full Stack Developer" />
+                        <Description variant="subtitle" text="Internship" />
                       </Section>
                     </BodyContent>
                   </Container>
                   <Container>
-                    <YearContent startDate="2020/07/01" currentYear />
+                    <YearContent startDate="2013/08/01" endDate="2013/09/01" />
                     <BodyContent>
-                      <Section title="Title3">
-                        <Description variant="subtitle" text="Subtitle" />
-                        <Description text="Description3" />
-                        <Description text="Another description3" />
-                      </Section>
-                      <Section title="Another title3">
-                        <Description text="Description3" />
-                        <Description text="Another description3" />
+                      <Section title="Petroinform.net">
+                        <Description text="Fiber optics technician" />
+                        <Description variant="subtitle" text="Internship" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -165,7 +155,7 @@ function ResumeSection() {
                     <BodyContent>
                       <Section title="AGH University of Science and Technology">
                         <Description text="Mechatronic Engineering" />
-                        <Description text="Bachelor's degree" />
+                        <Description variant="subtitle" text="Bachelor's degree" />
                       </Section>
                     </BodyContent>
                   </Container>
@@ -173,7 +163,7 @@ function ResumeSection() {
                     <YearContent startDate="2012/09" endDate="2016/06" />
                     <BodyContent>
                       <Section title="Upper Secondary School of Communication">
-                        <Description text="IT Specialist" />
+                        <Description variant="subtitle" text="IT Specialist" />
                       </Section>
                     </BodyContent>
                   </Container>
