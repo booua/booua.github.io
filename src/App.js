@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Redirect, Switch } from "react-router-dom";
+import { HashRouter, Redirect, Switch } from "react-router-dom";
 import ClassicLayoutRoute from "./layouts/ClassicLayout/ClassicLayoutRoute";
 import EmptyLayoutRoute from "./layouts/EmptyLayout/EmptyLayoutRoute";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
@@ -15,7 +15,7 @@ import Cursor, { handleCursorMove } from "./components/Cursor/Cursor";
 const App = () => {
   return (
     <div onMouseMove={(e) => handleCursorMove(e)} style={{cursor: "none"}}>
-      <BrowserRouter>
+      <HashRouter>
         <AnimatePresence exitBeforeEnter>
           <Switch>
             <ClassicLayoutRoute exact path="/" component={WelcomePage} />
@@ -40,7 +40,7 @@ const App = () => {
           </Switch>
         </AnimatePresence>
         <Cursor />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };

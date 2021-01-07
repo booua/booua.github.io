@@ -4,7 +4,7 @@ import { styles as defaultStyles } from "../../tools/DefaultStyles";
 import { motion } from "framer-motion";
 import { SplitText } from "../../components/SplitText/SplitText";
 import { FiChevronDown } from "react-icons/fi";
-import { DiJavascript1, DiReact, DiJava, DiPython, DiGo, DiCss3, DiHtml5, DiNodejs, DiMysql, DiCss3Full } from "react-icons/di";
+import { DiJavascript1, DiReact, DiJava, DiPython, DiGo, DiCss3, DiHtml5, DiNodejs, DiMysql } from "react-icons/di";
 import { BiCool, BiVideo } from "react-icons/bi";
 import { SiArduino } from "react-icons/si";
 import { FaRegKissWinkHeart } from "react-icons/fa";
