@@ -74,10 +74,19 @@ function ResumeSection() {
               <motion.span variants={resumeItemEnterAnimation} custom={1}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
-                    <YearContent startDate="2020/10" currentYear />
+                    <YearContent startDate="2021/02" currentYear />
                     <BodyContent>
-                      <Section title="Freelancer">
-                        <Description text="" />
+                      <Section title="Jacek Paciorek">
+                        <Description text="Owner" />
+                        <Description variant="subtitle" text="Software Engineering & Consulting" />
+                      </Section>
+                    </BodyContent>
+                  </Container>
+                  <Container>
+                    <YearContent startDate="2021/01" currentYear />
+                    <BodyContent>
+                      <Section title="Gabi">
+                        <Description text="Frontend Engineer" />
                         <Description text="" />
                       </Section>
                     </BodyContent>
