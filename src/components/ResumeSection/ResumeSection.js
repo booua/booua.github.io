@@ -73,8 +73,17 @@ function ResumeSection() {
             <Col xs={12} sm={12} md={4}>
               <motion.span variants={resumeItemEnterAnimation} custom={1}>
                 <Timeline dateFormat="ll" theme={styles.timelineTheme}>
+                <Container>
+                    <YearContent startDate="2021/10" currentYear />
+                    <BodyContent>
+                      <Section title="Proxify">
+                        <Description text="Network Member / Consultant" />
+                        <Description variant="subtitle" text="Software Engineering" />
+                      </Section>
+                    </BodyContent>
+                  </Container>
                   <Container>
-                    <YearContent startDate="2021/02" currentYear />
+                    <YearContent startDate="2021/02" currentYear/>
                     <BodyContent>
                       <Section title="Jacek Paciorek">
                         <Description text="Owner" />
@@ -109,7 +118,14 @@ function ResumeSection() {
                       </Section>
                     </BodyContent>
                   </Container>
-                  <Container>
+                </Timeline>
+              </motion.span>
+            </Col>
+
+            <Col xs={12} sm={12} md={4}>
+              <motion.span variants={resumeItemEnterAnimation} custom={2}>
+                <Timeline dateFormat="ll" theme={styles.timelineTheme}>
+                <Container>
                     <YearContent startDate="2017/06" endDate="2018/06" />
                     <BodyContent>
                       <Section title="uKOD">
@@ -118,22 +134,15 @@ function ResumeSection() {
                       </Section>
                     </BodyContent>
                   </Container>
-                  <Container>
+                <Container>
                     <YearContent startDate="2016/10" endDate="2017/07" />
                     <BodyContent>
-                      <Section title="Artists Ent.">
+                      <Section title="Artists Entertainment">
                         <Description text="Full Stack Developer" />
                         <Description text="" />
                       </Section>
                     </BodyContent>
                   </Container>
-                </Timeline>
-              </motion.span>
-            </Col>
-
-            <Col xs={12} sm={12} md={4}>
-              <motion.span variants={resumeItemEnterAnimation} custom={2}>
-                <Timeline dateFormat="ll" theme={styles.timelineTheme}>
                   <Container>
                     <YearContent startDate="2016/07/01" endDate="2016/09/01" />
                     <BodyContent>

@@ -31,14 +31,14 @@ const styles = {
   },
   textArea: {
     backgroundColor: "rgba(255,255,255,0.6)",
-    height: "100px",
+    height: "80px",
     gridColumn: "1 / span 12",
     borderRadius: "10px",
-    border: 'none'
+    border: "none",
   },
   socialMediaContainer: {
-    display: "grid",
-    placeItems: "center",
+    margin: "0 auto",
+    padding: "10px",
   },
   form: {
     display: "grid",
@@ -50,9 +50,9 @@ const styles = {
     margin: "0 auto",
     marginTop: "10px",
     background: "rgba(255, 255, 255, 0.5)",
-    borderRadius: "20px",
-    border: 'none',
-    padding: '5px'
+    borderRadius: "10px",
+    border: "none",
+    padding: "7px",
   },
   socialMediaLinks: {
     textDecoration: "none",
@@ -65,16 +65,20 @@ const styles = {
     size: 20,
   },
   nameInput: {
+    padding: "10px",
+    backgroundColor: "rgba(255,255,255,0.6)",
     marginRight: "10px",
     marginBottom: "10px",
     borderRadius: "10px",
-    border: 'none',
+    border: "none",
   },
   emailInput: {
+    padding: "10px",
+    backgroundColor: "rgba(255,255,255,0.6)",
     marginLeft: "10px",
     marginBottom: "10px",
     borderRadius: "10px",
-    border: 'none',
+    border: "none",
   },
 };
 
@@ -133,7 +137,7 @@ const ContactPane = ({ isToggled, hide }) => {
           return (
             <div
               key={key}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: "flex", justifyContent: "left", padding: "10px" }}
             >
               {socialMediaLinks[key].icon}
               <a
@@ -147,7 +151,7 @@ const ContactPane = ({ isToggled, hide }) => {
         })}
       </div>
       <div style={styles.formContainer}>
-        <div style={{ fontSize: "1rem", color: "#dfdfdf", padding: "15px" }}>
+        <div style={{ fontSize: "1rem", color: "#dfdfdf", padding: "10px 15px 10px 15px" }}>
           Feel free to drop me a message
         </div>
         <form onSubmit={(e) => submitForm(e)} style={styles.form}>

@@ -5,12 +5,19 @@ import { motion } from "framer-motion";
 import { SplitText } from "../../components/SplitText/SplitText";
 import { FiChevronDown } from "react-icons/fi";
 import { DiJavascript1, DiReact, DiJava, DiPython, DiGo, DiCss3, DiHtml5, DiNodejs, DiMysql } from "react-icons/di";
-import { BiCool, BiVideo } from "react-icons/bi";
-import { SiArduino } from "react-icons/si";
+import { BiCool, BiServer, BiVideo } from "react-icons/bi";
+import { SiArduino, SiRedux, SiTypescript } from "react-icons/si";
 import { FaRegKissWinkHeart } from "react-icons/fa";
 
 
 const AboutPage = () => {
+  const styles = { 
+    flexItemStyle: {
+      display:"flex",
+      flexDirection:"row",
+      alignItems:"center"
+    }
+  }
   return (
     <div style={defaultStyles.root}>
       <ContentSection id="about">
@@ -102,32 +109,34 @@ const AboutPage = () => {
             placeItems: "center" 
           }}
         >
-          <div>
+          <div style={{height: "400px"}}>
             <span style={{fontSize: '3.2rem'}}>FrontEnd</span>
             <ul style={{listStyle: 'none',fontSize: '2rem'}}>
-              <li> <DiJavascript1 style={{fontSize: '3rem'}}/> JavaScript</li>
-              <li><DiReact style={{fontSize: '3rem'}}/> React</li>
-              <li><DiCss3 style={{fontSize: '3rem'}}/> CSS3/SCSS</li>
-              <li><DiHtml5 style={{fontSize: '3rem'}}/> HTML5</li>
+              <li style={styles.flexItemStyle}> <DiJavascript1 style={{fontSize: '3rem'}}/> JavaScript</li>
+              <li style={styles.flexItemStyle}><SiTypescript style={{fontSize: '3rem'}}/> TypeScript</li>
+              <li style={styles.flexItemStyle}><DiReact style={{fontSize: '3rem'}}/> React</li>
+              <li style={styles.flexItemStyle}><SiRedux style={{fontSize: '3rem'}}/> Redux</li>
+              <li style={styles.flexItemStyle}><DiCss3 style={{fontSize: '3rem'}}/> CSS3/SCSS</li>
+              <li style={styles.flexItemStyle}><DiHtml5 style={{fontSize: '3rem'}}/> HTML5</li>
             </ul>
           </div>
-          <div>
+          <div style={{height: "400px"}}>
             <span style={{fontSize: '3.2rem'}}>BackEnd</span>
             <ul style={{listStyle: 'none', fontSize: '2rem'}}>
-              <li><DiNodejs style={{fontSize: '3rem'}}/> Node.JS</li>
-              <li><DiJava style={{fontSize: '3rem'}}/> Java</li>
-              <li><DiMysql style={{fontSize: '3rem'}}/> SQL</li>
-              <li><DiPython style={{fontSize: '3rem'}}/> Python</li>
-              <li><DiGo style={{fontSize: '3rem'}}/> Go</li>
+              <li style={styles.flexItemStyle}><DiNodejs style={{fontSize: '3rem'}}/> Node.JS</li>
+              <li style={styles.flexItemStyle}><DiJava style={{fontSize: '3rem'}}/> Java</li>
+              <li style={styles.flexItemStyle}><DiMysql style={{fontSize: '3rem'}}/> SQL</li>
+              <li style={styles.flexItemStyle}><DiPython style={{fontSize: '3rem'}}/> Python</li>
+              <li style={styles.flexItemStyle}><DiGo style={{fontSize: '3rem'}}/> Go</li>
             </ul>
           </div>
-          <div>
+          <div style={{height: "400px"}}>
             <span style={{fontSize: '3.2rem'}}>Other</span>
             <ul style={{listStyle: 'none', fontSize: '2rem'}}>
-              <li><BiCool style={{fontSize: '3rem'}}/> My Mom thinks I'm cool</li>
-              <li> <SiArduino style={{fontSize: '3rem'}}/> Hardware stuff (Arduino, Raspberry n'shit)</li>
-              <li><BiVideo style={{fontSize: '3rem'}}/> Some video editing alongside with basic Photoshop work</li>
-              <li><FaRegKissWinkHeart style={{fontSize: '3rem'}}/> I have a cool girlfriend Marta <span role='img' aria-label='heart'>💕</span></li>
+              <li style={styles.flexItemStyle}><BiCool style={{fontSize: '3rem'}}/> My Mom thinks I'm cool</li>
+              <li style={styles.flexItemStyle}><SiArduino style={{fontSize: '3rem'}}/> Hardware stuff (Arduino, Raspberry n'shit)</li>
+              <li style={styles.flexItemStyle}><BiVideo style={{fontSize: '3rem'}}/> Some video editing</li>
+              <li style={styles.flexItemStyle}><BiServer style={{fontSize: '3rem'}}/> I can do some DevOps stuff </li>
             </ul>
           </div>
         </div>
